@@ -1,5 +1,5 @@
 .app {
- width: 1000px;
+ width: 1500px;
  margin: $base-margin auto 0;
  display: flex;
 }
@@ -22,4 +22,8 @@
 
 .result-right {
   margin-left: 20px;
+}
+
+.topic {
+  text-align: center;
 }

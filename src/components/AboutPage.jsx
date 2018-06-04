@@ -1,4 +1,12 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom';
+
+import AboutTopic from './AboutTopic';
 
 class AboutPage extends Component {
   constructor(props) {
@@ -11,10 +19,18 @@ class AboutPage extends Component {
 
   render() {
     return (
-      <div className="about">
-        <h1 className="app-title">このサイトはアバウトなページです</h1>
-        <h4>{this.state.about}</h4>
-      </div>
+      <Router>
+        <div className="about">
+          <h1 className="app-title">このサイトはアバウトなページです</h1>
+          <h3>{this.state.about}</h3>
+          <ul>
+            <li><Link to="/about/abouttpoic">トピックを表示する</Link></li>
+          </ul>
+          <Switch>
+            <Route exact path="/about/abouttpoic" component={AboutTopic} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
