@@ -6,7 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import SearchPage from './SearchPage';
+import SearchPage from '../components/SearchPage';
 import AboutPage from './AboutPage';
 
 const App = () => (
