@@ -1,6 +1,17 @@
 import { combineReducers } from 'redux';
+import querystring from 'query-string';
 
-const place = (state = '東京ドーム', action) => {
+const getPlacePrams = () => {
+  const params = querystring.parse(global.location.search);
+  const { place } = params;
+  // console.log(`getPlaceParams${place}`);
+  if (place && place.length > 0) {
+    return place;
+  }
+  return null;
+};
+
+const place = (state = getPlacePrams() || '東京ドーム', action) => {
   switch (action.type) {
     case 'CHANGE_PLACE':
       return action.place;
